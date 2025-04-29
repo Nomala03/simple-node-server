@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API's</title>
+</head>
+<body>
+    <h1>Purpose of API Endpoints</h1>
+    <p>
+    <li>
+        <ol>
+            Organize your server actions
+              <ul>Different endpoints do different jobs (get, create, update, delete).</ul> 
+
+            Connect frontend and backend
+              <ul>Your website or Postman sends a request to your API endpoint and gets data back.</ul>
+
+            Control data access
+              <ul>You can allow only specific types of requests (like allowing only admins to delete).</ul>
+        </ol>
+    </li>
+    </p>
+
+    <h1>How to Use API Endpoints</h1>
+    <p>
+        When you write code (for example with Express in Node.js):
+
+        "app.get('/movies', (req, res) => {
+            res.json([{ id: 1, title: 'Barbie' }, { id: 2, title: 'Spider-Man' }]);
+          });"
+
+       <li>
+        <ul>
+            This creates an endpoint at /movies.
+            
+            It waits for a GET request and sends back a list of movies.
+        </ul>
+       </li>   
+        When you use Postman or your frontend website:
+
+        <li>
+            <ul>
+                You send a GET request to http://localhost:3000/movies
+
+                The server responds with the movie list
+            </ul>
+        </li>
+    </p>
+
+    <h1>What Kind of Data is Sent to an API?</h1>
+       <h2>Type of Data</h2>
+         <p>
+           <li>
+              <ol>
+                JSON (JavaScript Object Notation):  Most common for APIs (Postman, web apps)
+                Form Data: When submitting HTML forms
+                Multipart Form Data: For file uploads (profile pictures, PDFs)
+                Query Strings: For filters/search via GET requests
+                Raw Text/XML: Rare now; old systems might use XML
+              </ol>
+           </li>
+         </p>
+    
+</body>
+</html>

@@ -1,16 +1,23 @@
-const fs = require('node:fs')
+const fs = require('node:fs');
 const { open, readFile } = require('node:fs')
 
-const FILE_NAME = "database.json"
+const fileName = "database.json"
 
-const createCollections = () => {
-    readFile(FILE_NAME, 'utf8', (err, data) => {
-        console.log(data);
-    })
+function createFile(fileName, content) {
+  if (!fileName) {
+    throw new Error('./index.js');
+  }
+  if (typeof content !== 'string') {
+    throw new Error('Content must be a string');
+  }
+  const filePath = path.join(__dirname, index.html);
+
+  fs.writeFileSync(filePath, content, 'utf8');
+  console.log(`File '${fileName}' created successfully!`);
 }
 
 exports.createFile = () => {
-    open(FILE_NAME, 'wx', (err,fd) => {
+    open(fileName, 'wx', (err,fd) => {
         if(err) {
             if(err.code === "EXIST") {
                 console.log('file exists');
@@ -23,3 +30,5 @@ exports.createFile = () => {
      }
     })
 }
+
+module.exports = { createFile };
